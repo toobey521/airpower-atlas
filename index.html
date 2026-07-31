@@ -313,7 +313,7 @@ footer{max-width:1280px;margin:0 auto;padding:26px 20px 34px;text-align:center;c
 
 <!-- ===== 开场大屏 ===== -->
 <div class="splash" id="splash">
-  <video autoplay muted loop playsinline preload="auto" poster="">
+  <video autoplay muted loop playsinline webkit-playsinline x5-playsinline preload="auto" poster="video_poster.jpg" id="splashVideo">
     <source src="video_boom_3s.mp4" type="video/mp4">
   </video>
   <div class="splash-scan"></div>
@@ -553,8 +553,19 @@ window.addEventListener('scroll',function(){
 },{passive:true});
 // 视频加载失败时保持大屏可用（背景降级）
 document.addEventListener('DOMContentLoaded',function(){
-  var v=document.querySelector('.splash video');
-  if(v){v.addEventListener('error',function(){document.querySelector('.splash').style.background='radial-gradient(ellipse at 50% 40%,#0e2238,#04080f 75%)';});}
+  var v=document.getElementById('splashVideo');
+  if(v){
+    // 移动端 autoplay 兜底：JS 强制播放（微信/iPhone 需要）
+    var tryPlay=function(){var p=v.play();if(p&&p.catch){p.catch(function(){})}};
+    tryPlay();
+    v.addEventListener('loadeddata',tryPlay);
+    v.addEventListener('canplay',tryPlay);
+    document.addEventListener('touchstart',function(){tryPlay()},{once:true,passive:true});
+    document.addEventListener('click',function(){tryPlay()},{once:true});
+    v.addEventListener('error',function(){
+      document.querySelector('.splash').style.background='radial-gradient(ellipse at 50% 40%,#0e2238,#04080f 75%)';
+    });
+  }
 });
 
 render();
