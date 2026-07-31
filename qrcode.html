@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球空军图鉴 · 扫码访问 - Toobey</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+  background:#0a0f1a;color:#e8eef7;min-height:100vh;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0,212,255,.08), transparent),
+    linear-gradient(rgba(0,212,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,.025) 1px, transparent 1px);
+  background-size:auto,42px 42px,42px 42px;
+  padding:40px 20px 60px;
+}
+.wrap{max-width:1100px;margin:0 auto}
+header{text-align:center;margin-bottom:40px}
+.logo{display:inline-block;width:56px;height:56px;border-radius:16px;
+  background:linear-gradient(135deg,#00d4ff,#4f9cff);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 30px rgba(0,212,255,.4);margin-bottom:16px;font-size:26px}
+h1{font-size:30px;letter-spacing:4px;font-weight:800}
+h1 em{font-style:normal;color:#00d4ff}
+.sub{font-size:12px;color:#5c718f;letter-spacing:4px;margin-top:8px}
+.sub b{color:#ffd700;letter-spacing:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card{
+  background:linear-gradient(170deg,#111c30,#0e1626);border:1px solid #1e2f4d;border-radius:18px;
+  padding:22px 18px;text-align:center;transition:.3s;position:relative;overflow:hidden;
+}
+.card:hover{transform:translateY(-5px);border-color:rgba(0,212,255,.5);box-shadow:0 12px 34px rgba(0,0,0,.5)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--c,#00d4ff),transparent)}
+.card img{width:100%;max-width:220px;border-radius:12px;background:#fff;display:block;margin:0 auto}
+.card h3{margin-top:14px;font-size:17px;letter-spacing:2px;color:#e8eef7}
+.card p{font-size:11px;color:#5c718f;margin-top:4px;letter-spacing:1px}
+.card .url{font-size:10px;color:#00d4ff;margin-top:8px;word-break:break-all;line-height:1.5;opacity:.85}
+footer{text-align:center;margin-top:44px;font-size:11px;color:#3d4f68;letter-spacing:2px}
+.tip{text-align:center;margin-top:18px;font-size:12px;color:#8fa3bf;letter-spacing:1px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">✈</div>
+    <h1>全球空军图鉴 <em>·</em> 扫码访问</h1>
+    <div class="sub">AIRPOWER ATLAS · POWERED BY <b>TOOBEY</b> × HERMES</div>
+  </header>
+  <div class="grid">
+    <div class="card" style="--c:#ffd700">
+      <img src="qr/github-pages.png" alt="GitHub Pages 二维码">
+      <h3>GitHub Pages</h3>
+      <p>官方托管 · 全球 CDN · 首选入口</p>
+      <div class="url">toobey521.github.io/airpower-atlas</div>
+    </div>
+    <div class="card" style="--c:#f6821f">
+      <img src="qr/cloudflare.png" alt="Cloudflare Pages 二维码">
+      <h3>Cloudflare Pages</h3>
+      <p>Cloudflare CDN · 国内可用</p>
+      <div class="url">airpower-atlas.pages.dev</div>
+    </div>
+    <div class="card" style="--c:#4f9cff">
+      <img src="qr/esm-sh.png" alt="esm.sh 二维码">
+      <h3>esm.sh CDN</h3>
+      <p>零配置 · GitHub 即时同步</p>
+      <div class="url">esm.sh/gh/toobey521/airpower-atlas</div>
+    </div>
+    <div class="card" style="--c:#d63384">
+      <img src="qr/jsdelivr.png" alt="jsDelivr 二维码">
+      <h3>jsDelivr CDN</h3>
+      <p>全球 CDN · 资源加速备用</p>
+      <div class="url">cdn.jsdelivr.net/gh/toobey521/airpower-atlas</div>
+    </div>
+  </div>
+  <div class="tip">💡 微信扫一扫 · 任选入口 · 推荐 GitHub Pages / Cloudflare</div>
+  <footer>© 2026 TOOBEY NETWORK · 504 机型 / 88 国 / 9 大类</footer>
+</div>
+</body>
+</html>
