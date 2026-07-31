@@ -1,0 +1,10 @@
+*.py
+*.pyc
+__pycache__/
+*.log
+*副本*
+images - 副本/
+boom_frame*.png
+splash_preview.png
+video_boom.mp4
+.git-credentials
